@@ -1,0 +1,17 @@
+# Loại bỏ thư mục target vì không cần thiết trong quá trình build ban đầu
+target/
+
+# Loại bỏ metadata của IDE
+.idea/
+*.iml
+
+# Loại bỏ thư mục git và file log
+.git/
+*.log
+
+# Loại bỏ tệp tạm và không cần thiết
+*.swp
+*.temp
+*.bak
+*.old
+*.DS_Store
