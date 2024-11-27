@@ -20,7 +20,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/").permitAll()  // Cho phép truy cập không cần xác thực
+                        .requestMatchers("/","/api/pothole/**", "/api/auth/**").permitAll()  // Cho phép truy cập không cần xác thực
                         .anyRequest().authenticated()      // Các endpoint khác yêu cầu xác thực
                 )
                 .csrf().disable(); // Tắt CSRF (nếu không cần thiết)
