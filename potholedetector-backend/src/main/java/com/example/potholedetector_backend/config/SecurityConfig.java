@@ -20,10 +20,10 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/","/api/pothole/**", "/api/auth/**").permitAll()  // Cho phép truy cập không cần xác thực
+                        .requestMatchers("/", "/api/pothole/**", "/api/auth/**", "/pothole-updates/**", "**").permitAll() // Thêm WebSocket endpoint
                         .anyRequest().authenticated()      // Các endpoint khác yêu cầu xác thực
                 )
-                .csrf().disable(); // Tắt CSRF (nếu không cần thiết)
+                .csrf().disable(); // Tắt CSRF nếu không cần thiết
         return http.build();
     }
 }
